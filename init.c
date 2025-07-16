@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayoub <ayoub@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/14 18:35:24 by ayoub             #+#    #+#             */
-/*   Updated: 2025/07/15 00:49:36 by ayoub            ###   ########.fr       */
+/*   Created: 2025/07/15 00:49:22 by ayoub             #+#    #+#             */
+/*   Updated: 2025/07/16 13:11:07 by ayoub            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int	main(int ac , char **av)
+int init_data(t_data *data)
 {
-	t_data data;
-	if (ac != 5 && ac != 6)
-	{
-		printf("Error\n");
-		return (1);
-	}	
-	if (parse_argument(&data , av))
-	{
-		printf("Error invalid arguments\n");
-		return (1);
-	}
-	if (init_data(&data))
-	{
-		printf("Error Initialization failed\n");
-		return (1);
-	}
-	return (0);
+	;
 }

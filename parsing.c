@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayoub <ayoub@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/14 18:35:24 by ayoub             #+#    #+#             */
-/*   Updated: 2025/07/15 00:49:36 by ayoub            ###   ########.fr       */
+/*   Created: 2025/07/15 00:44:37 by ayoub             #+#    #+#             */
+/*   Updated: 2025/07/16 13:22:08 by ayoub            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int	main(int ac , char **av)
+static int validate_arg(char *av)
 {
-	t_data data;
-	if (ac != 5 && ac != 6)
+	int i = 0;
+	while (av[i])
 	{
-		printf("Error\n");
-		return (1);
-	}	
-	if (parse_argument(&data , av))
-	{
-		printf("Error invalid arguments\n");
-		return (1);
-	}
-	if (init_data(&data))
-	{
-		printf("Error Initialization failed\n");
-		return (1);
+		if (is_alphabetic(av[i]) || is_space(av[i]))
+		{
+			printf("Invalide arguments\n");
+			return (1);
+		}
+		i++;
 	}
 	return (0);
+}
+
+int	parse_argument(t_data *data , char **av)
+{
+	int i = 0;
+	while (av[i])
+	{
+		if(!validate_arg(av[i]))
+		
+		
+	}
+	
 }

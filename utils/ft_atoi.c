@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayoub <ayoub@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/14 18:35:24 by ayoub             #+#    #+#             */
-/*   Updated: 2025/07/15 00:49:36 by ayoub            ###   ########.fr       */
+/*   Created: 2025/07/14 18:34:53 by ayoub             #+#    #+#             */
+/*   Updated: 2025/07/14 18:35:15 by ayoub            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../philo.h"
 
-int	main(int ac , char **av)
+int	ft_atoi(const char *str)
 {
-	t_data data;
-	if (ac != 5 && ac != 6)
+	int	sign;
+	int	result;
+
+	sign = 1;
+	result = 0;
+	while (*str == ' ' || (*str >= 9 && *str <= 13))
+		str++;
+	if (*str == '-' || *str == '+')
 	{
-		printf("Error\n");
-		return (1);
-	}	
-	if (parse_argument(&data , av))
-	{
-		printf("Error invalid arguments\n");
-		return (1);
+		if (*str == '-')
+			sign = -1;
+		str++;
 	}
-	if (init_data(&data))
+	while (*str >= '0' && *str <= '9')
 	{
-		printf("Error Initialization failed\n");
-		return (1);
+		result = result * 10 + (*str - '0');
+		str++;
 	}
-	return (0);
+	return (result * sign);
 }

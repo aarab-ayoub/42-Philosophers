@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayoub <ayoub@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/14 18:35:24 by ayoub             #+#    #+#             */
-/*   Updated: 2025/07/15 00:49:36 by ayoub            ###   ########.fr       */
+/*   Created: 2025/07/16 13:15:53 by ayoub             #+#    #+#             */
+/*   Updated: 2025/07/16 13:19:32 by ayoub            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../philo.h"
 
-int	main(int ac , char **av)
+int is_alphabetic(char c)
 {
-	t_data data;
-	if (ac != 5 && ac != 6)
-	{
-		printf("Error\n");
-		return (1);
-	}	
-	if (parse_argument(&data , av))
-	{
-		printf("Error invalid arguments\n");
-		return (1);
-	}
-	if (init_data(&data))
-	{
-		printf("Error Initialization failed\n");
-		return (1);
-	}
-	return (0);
+	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
+}
+
+int is_space(char c)
+{
+	return (c == ' ' || c == '\t' || c == '\n' || c == '\r' || c == '\v' || c == '\f');
 }
