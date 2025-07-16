@@ -6,7 +6,7 @@
 /*   By: ayoub <ayoub@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/15 00:44:37 by ayoub             #+#    #+#             */
-/*   Updated: 2025/07/16 13:22:08 by ayoub            ###   ########.fr       */
+/*   Updated: 2025/07/16 17:38:46 by ayoub            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ static int validate_arg(char *av)
 	while (av[i])
 	{
 		if (is_alphabetic(av[i]) || is_space(av[i]))
-		{
-			printf("Invalide arguments\n");
 			return (1);
-		}
 		i++;
 	}
 	return (0);
@@ -29,12 +26,25 @@ static int validate_arg(char *av)
 
 int	parse_argument(t_data *data , char **av)
 {
-	int i = 0;
+	int i = 1;
+	
 	while (av[i])
 	{
-		if(!validate_arg(av[i]))
-		
-		
+		if (validate_arg(av[i]))
+		{
+			printf("Invalid Arguments");
+			exit (1);
+		}
+		i++;
 	}
+	data->philo_count = ft_atoi(av[1]);
+	data->time_to_die = ft_atoi(av[2]);
+	data->time_to_eat = ft_atoi(av[3]);
+	data->time_to_sleep = ft_atoi(av[4]);
+	if (av[5])
+		data->must_eat_count = ft_atoi(av[5]);
+	else
+		data->must_eat_count = -1;
 	
+	return (0);
 }

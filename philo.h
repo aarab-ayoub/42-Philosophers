@@ -6,7 +6,7 @@
 /*   By: ayoub <ayoub@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 18:34:06 by ayoub             #+#    #+#             */
-/*   Updated: 2025/07/16 13:19:28 by ayoub            ###   ########.fr       */
+/*   Updated: 2025/07/16 17:35:20 by ayoub            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 #include <unistd.h>
 #include <pthread.h>
 #include <sys/time.h>
+
+// Forward declaration
+typedef struct s_data t_data;
 
 typedef struct s_philo
 {
