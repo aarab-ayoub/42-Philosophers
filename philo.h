@@ -6,7 +6,7 @@
 /*   By: ayoub <ayoub@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 18:34:06 by ayoub             #+#    #+#             */
-/*   Updated: 2025/07/16 17:35:20 by ayoub            ###   ########.fr       */
+/*   Updated: 2025/07/19 18:46:28 by ayoub            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ typedef struct s_data
 
 int parse_argument(t_data *data, char **av);
 int init_data(t_data *data);
+void cleanup_data(t_data *data);
 int is_alphabetic(char c);
 int ft_atoi(const char *str);
 int is_space(char c);
