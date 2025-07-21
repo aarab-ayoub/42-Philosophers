@@ -1,4 +1,3 @@
-# 🎓 PTHREAD LEARNING JOURNEY
 
 ## 📚 How to Use This Learning Path
 
