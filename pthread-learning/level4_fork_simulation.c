@@ -57,7 +57,7 @@ int main() {
     // Initialize fork mutexes
     for (int i = 0; i < 3; i++) {
         pthread_mutex_init(&forks[i], NULL);
-        printf("🍴 Fork %d ready\n", i);
+        printf("Fork %d ready\n", i);
     }
     
     const int num_people = 3;
