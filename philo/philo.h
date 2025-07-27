@@ -6,7 +6,7 @@
 /*   By: ayoub <ayoub@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/14 18:34:06 by ayoub             #+#    #+#             */
-/*   Updated: 2025/07/19 18:46:28 by ayoub            ###   ########.fr       */
+/*   Updated: 2025/07/27 14:46:26 by ayoub            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,4 +63,10 @@ void cleanup_data(t_data *data);
 int is_alphabetic(char c);
 int ft_atoi(const char *str);
 int is_space(char c);
+void *philosopher_routine(void *arg);
+size_t get_current_time_ms(void);
+void safe_print(t_data *data, int philo_id, char *action);
+int is_over(t_data *data);
+void *monitor_routine(void *arg);
+
 #endif
