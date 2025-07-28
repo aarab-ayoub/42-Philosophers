@@ -27,7 +27,7 @@ void	safe_print(t_data *data, int philo_id, char *action)
 
 	pthread_mutex_lock(&data->print_mutex);
 	timestamp = get_current_time_ms() - data->start_time;
-	printf("Time %zums Philosopher %d %s\n", timestamp, philo_id + 1, action);
+	printf("%zu %d %s\n", timestamp, philo_id + 1, action);
 	pthread_mutex_unlock(&data->print_mutex);
 }
 

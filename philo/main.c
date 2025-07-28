@@ -81,6 +81,5 @@ int	main(int ac, char **av)
 		return (1);
 	join_all_threads(&data, monitor);
 	cleanup_data(&data);
-	printf("Cleanup complete!\n");
 	return (0);
 }

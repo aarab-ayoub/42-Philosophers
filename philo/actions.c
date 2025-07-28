@@ -15,11 +15,11 @@
 
 void	eat(t_philo *philo)
 {
-	safe_print(philo->data, philo->id, "is eating");
 	pthread_mutex_lock(&philo->data->eat_count_mutex);
 	philo->last_meal_time = get_current_time_ms();
 	philo->meals_eaten++;
 	pthread_mutex_unlock(&philo->data->eat_count_mutex);
+	safe_print(philo->data, philo->id, "is eating");
 	usleep(philo->data->time_to_eat * 1000);
 }
 

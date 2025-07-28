@@ -19,9 +19,9 @@ int	check_philosopher_death(t_data *data, int i)
 	size_t	last_meal;
 	size_t	mealing_time;
 
-	current_time = get_current_time_ms();
 	pthread_mutex_lock(&data->eat_count_mutex);
 	last_meal = data->philos[i].last_meal_time;
+	current_time = get_current_time_ms();
 	pthread_mutex_unlock(&data->eat_count_mutex);
 	mealing_time = current_time - last_meal;
 	if (mealing_time > (size_t)data->time_to_die)
