@@ -26,8 +26,11 @@ void	safe_print(t_data *data, int philo_id, char *action)
 	size_t	timestamp;
 
 	pthread_mutex_lock(&data->print_mutex);
-	timestamp = get_current_time_ms() - data->start_time;
-	printf("%zu %d %s\n", timestamp, philo_id + 1, action);
+	if (!data->all_died && !data->all_ate)
+	{
+		timestamp = get_current_time_ms() - data->start_time;
+		printf("%zu %d %s\n", timestamp, philo_id + 1, action);
+	}
 	pthread_mutex_unlock(&data->print_mutex);
 }
 

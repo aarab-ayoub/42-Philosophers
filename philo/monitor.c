@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   monitor.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayaarab <ayaarab@student.42.fr>                +#+  +:+      
+/*   By: ayaarab <ayaarab@student.42.fr>                +#+  +:+
 	+#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 13:10:22 by ayoub             #+#    #+#             */
@@ -27,9 +27,13 @@ int	check_philosopher_death(t_data *data, int i)
 	if (mealing_time > (size_t)data->time_to_die)
 	{
 		pthread_mutex_lock(&data->death_mutex);
-		data->all_died = 1;
+		if (!data->all_died && !data->all_ate)
+		{
+			printf("%zu %d died\n", current_time - data->start_time,
+				data->philos[i].id + 1);
+			data->all_died = 1;
+		}
 		pthread_mutex_unlock(&data->death_mutex);
-		safe_print(data, data->philos[i].id, "died");
 		return (1);
 	}
 	return (0);

@@ -82,6 +82,7 @@ int						handle_single_philo(t_philo *philo);
 void					eat(t_philo *philo);
 void					sleep_philo(t_philo *philo);
 void					think(t_philo *philo);
+// void					nap(t_data *data, int time);
 int						create_philosopher_threads(t_data *data);
 int						create_monitor_thread(t_data *data, pthread_t *monitor);
 void					join_all_threads(t_data *data, pthread_t monitor);
