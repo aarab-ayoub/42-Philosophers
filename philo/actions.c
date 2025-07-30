@@ -13,7 +13,7 @@
 
 #include "philo.h"
 
-void	nap(t_data *data, int time)
+static void	nap(t_data *data, int time)
 {
 	size_t	current;
 

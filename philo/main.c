@@ -63,7 +63,7 @@ int	main(int ac, char **av)
 
 	if (ac != 5 && ac != 6)
 	{
-		printf("Error\n");
+		printf("Error invalid arguments\n");
 		return (1);
 	}
 	if (parse_argument(&data, av))
